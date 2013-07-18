@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Check for AllyCAD versions:" android:defaultValue="true">
+        
+        <CheckBoxPreference android:title="AllyCAD 2011" android:defaultValue="true" android:key="ac1pref"></CheckBoxPreference>
+        
+        <CheckBoxPreference android:title="AllyCAD 3.6" android:defaultValue="true" android:key="ac2pref"></CheckBoxPreference>
+        
+        <CheckBoxPreference android:title="AllyCAD 2013" android:key="ac3pref" android:defaultValue="true"/>
+    </PreferenceCategory>
+<!--     <PreferenceCategory android:title="Download location:" android:defaultValue="false"> -->
+<!--         <CheckBoxPreference android:key="dfltloc" android:title="Default location"></CheckBoxPreference> -->
+<!--         <EditTextPreference android:enabled="false" android:key="custloc" android:title="custom location"></EditTextPreference> -->
+<!-- 	 </PreferenceCategory>     -->
+<!--     <PreferenceCategory android:title="Background service:"> -->
+<!--         <CheckBoxPreference android:key="background" android:title="Check periodically" android:defaultValue="false"></CheckBoxPreference> -->
+<!--     </PreferenceCategory> -->
+    <PreferenceCategory android:title="Check for Civil Designer versions:"><CheckBoxPreference android:title="Civil Designer 2011" android:defaultValue="true" android:key="cd1pref"></CheckBoxPreference><CheckBoxPreference android:title="Civil Designer 6.5" android:defaultValue="true" android:key="cd2pref"></CheckBoxPreference><CheckBoxPreference android:title="Civil Designer 2013" android:key="cd3pref" android:defaultValue="true" /></PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Knowledge Base Software: Version Check</string>
+    <string name="no_list_data">No List Data Present.</string>
+    <string name="screen_more_title">Current versions:</string>
+    <string name="screen_details_title">Version details:</string>
+    <string name="details1">program name and version</string>
+    <string name="details2">download updates links</string>
+    <string name="details3">support@knowbase.co.za, +27217011850</string>
+    <string name="downloadCaption">Download:</string>
+    <string name="x86Update">x86 Update</string>
+    <string name="x64Update">x64 Update</string>
+    <string name="update">Update</string>
+    <string name="preferences">Preferences</string>
+    
+    <string name="refresh">Refresh</string><string name="progressChecking">Checking versions. Please wait...</string><string name="toastNoNetwork">No network connection.</string>
+    <string name="progressDownloading">Downloading...</string><string name="progressCancel">Cancel</string>
+    
+    <string name="toastSuccessful">File successfully downloaded</string>
+    <string name="toastAlreadyExists">File %s already exists.</string>
+    
+</resources>
