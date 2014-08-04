@@ -3,11 +3,12 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Check for AllyCAD versions:" android:defaultValue="true">
         
-        <CheckBoxPreference android:title="AllyCAD 2011" android:defaultValue="true" android:key="ac1pref"></CheckBoxPreference>
+        <CheckBoxPreference android:title="AllyCAD 2011" android:defaultValue="false" android:key="ac1pref"></CheckBoxPreference>
         
-        <CheckBoxPreference android:title="AllyCAD 3.6" android:defaultValue="true" android:key="ac2pref"></CheckBoxPreference>
+        <CheckBoxPreference android:title="AllyCAD 3.6" android:defaultValue="false" android:key="ac2pref"></CheckBoxPreference>
         
-        <CheckBoxPreference android:title="AllyCAD 2013" android:key="ac3pref" android:defaultValue="true"/>
+        <CheckBoxPreference android:title="AllyCAD 2013" android:key="ac3pref" android:defaultValue="false"/>
+        <CheckBoxPreference android:title="AllyCAD 2014" android:key="ac4pref" android:defaultValue="true"/>
     </PreferenceCategory>
 <!--     <PreferenceCategory android:title="Download location:" android:defaultValue="false"> -->
 <!--         <CheckBoxPreference android:key="dfltloc" android:title="Default location"></CheckBoxPreference> -->
@@ -16,5 +17,7 @@
 <!--     <PreferenceCategory android:title="Background service:"> -->
 <!--         <CheckBoxPreference android:key="background" android:title="Check periodically" android:defaultValue="false"></CheckBoxPreference> -->
 <!--     </PreferenceCategory> -->
-    <PreferenceCategory android:title="Check for Civil Designer versions:"><CheckBoxPreference android:title="Civil Designer 2011" android:defaultValue="true" android:key="cd1pref"></CheckBoxPreference><CheckBoxPreference android:title="Civil Designer 6.5" android:defaultValue="true" android:key="cd2pref"></CheckBoxPreference><CheckBoxPreference android:title="Civil Designer 2013" android:key="cd3pref" android:defaultValue="true" /></PreferenceCategory>
+    <PreferenceCategory android:title="Check for Civil Designer versions:"><CheckBoxPreference android:title="Civil Designer 2011" android:defaultValue="false" android:key="cd1pref"></CheckBoxPreference><CheckBoxPreference android:title="Civil Designer 6.5" android:defaultValue="false" android:key="cd2pref"></CheckBoxPreference><CheckBoxPreference android:title="Civil Designer 2013" android:key="cd3pref" android:defaultValue="false" />
+    <CheckBoxPreference android:title="Civil Designer 2014" android:key="cd4pref" android:defaultValue="true"/>
+</PreferenceCategory>
 </PreferenceScreen>

@@ -10,7 +10,8 @@
         android:id="@+id/screen_title_bar"
         android:layout_width="fill_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" android:layout_height="72px">
+        android:layout_alignParentLeft="true"
+        android:layout_height="72dp">
         <TextView
             android:id="@+id/screen_top_title"
             android:layout_width="wrap_content"
@@ -19,7 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
             android:textSize="16sp"
-            android:paddingLeft="10px"
+            android:paddingLeft="10dp"
             android:textStyle="italic"
         >
         </TextView>
@@ -30,8 +31,9 @@
             android:src="@drawable/icon"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:paddingRight="10px"
+            android:paddingRight="10dp"
             android:background="@null"
+            android:contentDescription="@string/mainImageDesc"
             >
         </ImageButton>   
     </RelativeLayout>

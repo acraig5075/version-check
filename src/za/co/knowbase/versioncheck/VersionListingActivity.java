@@ -33,7 +33,7 @@ import android.widget.Toast;
 public class VersionListingActivity extends ListActivity 
 	{
 	// preference names
-	private static final String [] _keys = {"cd1pref", "ac1pref", "cd2pref", "ac2pref", "cd3pref", "ac3pref"};
+	private static final String [] _keys = {"cd1pref", "ac1pref", "cd2pref", "ac2pref", "cd3pref", "ac3pref", "cd4pref", "ac4pref"};
 
 	// number of possible software packages in list (whether shown or not)
 	private int _count;
@@ -81,6 +81,8 @@ public class VersionListingActivity extends ListActivity
 		final String t4 = "AllyCAD 3.6:www.allycad.com/:AllyCAD36Ver.txt:true:AC36R%d_Patch.exe::0";
 		final String t5 = "Civil Designer 2013:www.civildesigner.com/:CD2013_Ver.txt:false:CD2013_%d_x86_Update.exe:CD2013_%d_x64_Update.exe:0";
 		final String t6 = "AllyCAD 2013:www.allycad.com/:AC2013_Ver.txt:false:AC2013_%d_x86_Update.exe:AC2013_%d_x64_Update.exe:0";
+		final String t7 = "Civil Designer 2014:www.civildesigner.com/:CD2014_Ver.txt:false:CD2014_%d_x86_Update.exe:CD2014_%d_x64_Update.exe:0";
+		final String t8 = "AllyCAD 2014:www.allycad.com/:AC2014_Ver.txt:false:AC2014_%d_x86_Update.exe:AC2014_%d_x64_Update.exe:0";
 		
 		SoftwareVersion s0 = new SoftwareVersion(t1);
 		SoftwareVersion s1 = new SoftwareVersion(t2);
@@ -88,6 +90,8 @@ public class VersionListingActivity extends ListActivity
 		SoftwareVersion s3 = new SoftwareVersion(t4);
 		SoftwareVersion s4 = new SoftwareVersion(t5);
 		SoftwareVersion s5 = new SoftwareVersion(t6);
+		SoftwareVersion s6 = new SoftwareVersion(t7);
+		SoftwareVersion s7 = new SoftwareVersion(t8);
 	
 		int [] lastVersions = retrieveLastKnownVersions();
 		
@@ -97,6 +101,8 @@ public class VersionListingActivity extends ListActivity
 		s3._versionNum = lastVersions[3];
 		s4._versionNum = lastVersions[4];
 		s5._versionNum = lastVersions[5];
+		s6._versionNum = lastVersions[6];
+		s7._versionNum = lastVersions[7];
 		
 		_software.add(s0);
 		_software.add(s1);
@@ -104,6 +110,8 @@ public class VersionListingActivity extends ListActivity
 		_software.add(s3);
 		_software.add(s4);
 		_software.add(s5);
+		_software.add(s6);
+		_software.add(s7);
 
 		// gather the data to be used by the array
 		collectListData();
@@ -153,12 +161,33 @@ public class VersionListingActivity extends ListActivity
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) 
 		{	
-		SoftwareVersion sv = _software.get(position);
+		int softwareIdx = getSoftwareIndexByListItemIndex(position);
+		SoftwareVersion sv = _software.get(softwareIdx);
+		
 		Intent i = new Intent(this, ProgramDetailsActivity.class);
 		i.putExtra("software", sv.toStringEx());
 		
 		startActivity(i);
 		}
+
+
+	private int getSoftwareIndexByListItemIndex(int position)
+	{
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+		
+		int nVisible = -1;
+		for (int i = 0; i < _keys.length; i++)
+		{
+			if (sharedPrefs.getBoolean(_keys[i], true))
+			{
+				nVisible++;
+				if (position == nVisible)
+					return i;
+			}
+		}
+		
+		return -1;	
+	}
 	
 	
 	// Bind data to the list with adapter
